@@ -53,13 +53,13 @@ const ApiData = () => {
           Get RunOrder
         </button>
         <div>
-          <label htmlFor="comboBox">Select an option: </label>
+          <label htmlFor="comboBox">Select an Run Order: </label>
           <select
             id="comboBox"
             value={selectedOption}
             onChange={handleOptionChange}
           >
-            <option value="">Select an option</option>
+            <option value="">Select an Run Order</option>
             {data?.map((option, index) => (
               <option key={index} value={option.title}>
                 {option.title}
