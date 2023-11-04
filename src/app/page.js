@@ -45,7 +45,11 @@ const ApiData = () => {
   return (
     <div>
       <div>
-        <button onClick={() => setData1('select title from newsid', setData)}>
+        <button
+          onClick={() =>
+            setData1('select title from newsid ORDER BY title DESC', setData)
+          }
+        >
           Get RunOrder
         </button>
         <div>
