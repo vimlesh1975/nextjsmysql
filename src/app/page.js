@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const ApiData = () => {
   const [data, setData] = useState([]);
@@ -81,8 +81,8 @@ const ApiData = () => {
       </div>
 
       <div>
-        {stories.map((story) => (
-          <div>
+        {stories.map((story, i) => (
+          <div key={i}>
             <h2 style={{ backgroundColor: 'yellow' }}>{story.SlugName}</h2>
             <h3>{story.Script}</h3>
           </div>
