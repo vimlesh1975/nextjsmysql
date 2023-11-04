@@ -1,11 +1,11 @@
 import mysql from 'serverless-mysql';
 const db = mysql({
   config: {
-    host: 'localhost',
+    host: '192.168.15.111',
     port: 3306,
-    database: 'sakila',
-    user: 'root',
-    password: 'root',
+    database: 'c1news',
+    user: 'itmaint',
+    password: 'itddkchn',
   },
 });
 const excuteQuery = async ({ query, values }) => {
@@ -18,7 +18,8 @@ const excuteQuery = async ({ query, values }) => {
   }
 };
 
-export async function GET(req, res) {
-  const aa = await excuteQuery({ query: 'SELECT * FROM `actor` limit 2' });
+export async function POST(req, res) {
+  const body = await req.json();
+  const aa = await excuteQuery({ query: body.query });
   return new Response(JSON.stringify(aa));
 }
