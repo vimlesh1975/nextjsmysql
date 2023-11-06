@@ -50,16 +50,18 @@ const ApiData = () => {
             setData1('select title from newsid ORDER BY title DESC', setData)
           }
         >
-          Get RunOrder
+          Get Run Orders
         </button>
         <div>
-          <label htmlFor="comboBox">Select an Run Order: </label>
+          {data.length > 0 && (
+            <label htmlFor="comboBox">Select Run Order: </label>
+          )}
           <select
             id="comboBox"
             value={selectedOption}
             onChange={handleOptionChange}
           >
-            <option value="">Select an Run Order</option>
+            <option value="">Select Run Order</option>
             {data?.map((option, index) => (
               <option key={index} value={option.title}>
                 {option.title}
